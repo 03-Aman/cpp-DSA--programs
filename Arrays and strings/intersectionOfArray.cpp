@@ -16,18 +16,20 @@ int main()
     {
         cin >> arr2[i];
     }
+    cout<<"The intersection of given two arrays is->  ";
     for (int i = 0; i < n1; i++)
     {
         for (int j = 0; j < n2; j++)
         {
             if (arr1[i] == arr2[j])
             {
-                ans = arr1[i];
+                cout<<arr1[i]<<" ";
                 break;
+                
             }
         }
     }
-    cout << "The common element is: " << ans;
+    
 
     return 0;
 }
