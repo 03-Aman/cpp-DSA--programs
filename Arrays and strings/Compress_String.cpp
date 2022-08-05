@@ -3,7 +3,7 @@ using namespace std;
 int main()
 {
     string s, compressStr = "";
-    cout << "Enter the string: ";
+    cout << "Enter the string: ";      
     cin >> s;
     cout << s.length();
     int StartIn = 0, EndIn = 0;
