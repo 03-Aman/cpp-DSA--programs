@@ -22,20 +22,41 @@ void create(node *first, int *arr, int n)
         last = t;
     }
 }
-
-void insertAtPos(node *first, int pos, int d)
+void max(node *p)
+{
+    int ma = INT_MIN;
+    while (p != NULL)
+    {
+        if (p->data > ma)
+            ma = p->data;
+        p = p->next;
+    }
+    cout << "The maximum element is :" << ma << endl;
+}
+void min(node *p)
+{
+    int mi = INT_MAX;
+    while (p != NULL)
+    {
+        if (p->data < mi)
+            mi = p->data;
+        p = p->next;
+    }
+    cout << "The minimum element is: " << mi << endl;
+}
+void insertAtPos(node **first, int pos, int d)
 {
     node *t = new node(d);
     node *temp = first;
     node *p = first;
-    if (pos==0)
+    if (pos == 0)
     {
         t->next = first;
         temp = t;
     }
     else
     {
-        for (int i = 1; i < pos - 1 && p; i++)
+        for (int i = 1; i <= pos - 1 && p; i++)
             p = p->next;
         if (p)
         {
@@ -54,6 +75,24 @@ void print(node *p)
     }
     cout << endl;
 }
+void search(node *p, int ele)
+{
+    bool flag = true;
+    int count = 0;
+    while (p != NULL)
+    {
+        count++;
+        if (p->data == ele)
+        {
+            flag = false;
+            cout << ele << " is present at position " << count << endl;
+            break;
+        }
+        p = p->next;
+    }
+    if (flag)
+        cout << "The given element is not present in the list!" << endl;
+}
 int main()
 {
     int arr[5] = {1, 2, 5, 3, 6};
@@ -62,7 +101,8 @@ int main()
     cout << "Linked list is: ";
     print(first);
     cout << "List after insertion is: ";
-    insertAtPos(first, 0, 13);
+    insertAtPos(&first, 0, 13);
     print(first);
+    // search(first, 5);
     return 0;
 }
