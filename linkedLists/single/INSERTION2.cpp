@@ -44,7 +44,7 @@ void min(node *p)
     }
     cout << "The minimum element is: " << mi << endl;
 }
-void insertAtPos(node **first, int pos, int d)
+void insertAtPos(node * first, int pos, int d)
 {
     node *t = new node(d);
     node *temp = first;

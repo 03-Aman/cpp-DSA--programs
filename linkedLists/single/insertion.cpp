@@ -34,7 +34,7 @@ void insertAtPosition(node *&head, int position, int d)
     {
         node *temp = head;
         int cnt = 1;
-        while (cnt < position - 1)
+        while (cnt < position -1)
         {
             temp = temp->next;
             cnt++;
