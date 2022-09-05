@@ -17,12 +17,12 @@ void insertAtHead(node *&head, int d)
     temp->next = head;
     head = temp;
 }
-// void append(node *&last, int d)
-// {
-//     node *temp = new node(d);
-//     last->next = temp;
-//     last = temp;
-// }
+void append(node *&last, int d)
+{
+    node *temp = new node(d);
+    last->next = temp;
+    last = temp;
+}
 void insertAtPos(node *&head, int pos, int d)
 {
     node *p = head;
@@ -67,6 +67,25 @@ void del(node *&head, int pos)
         delete curr;
     }
 }
+void RemoveDuplicate(node *&head)
+{
+    node *t = head;
+    while (t != NULL)
+    {
+        node *t2;
+        t2 = t->next;
+        while (t2 != NULL)
+           {
+            if(t2->data==t->data)
+            {
+                t->next=t2->next;
+              
+            }
+            t2=t2->next;
+           }
+           t=t->next;
+    }
+}
 void print(node *p)
 {
     while (p != NULL)
@@ -94,9 +113,11 @@ int main()
     }
 
     // append(last, 12);
-    insertAtPos(head, 3, 100);
+    // print(head);
+    // insertAtPos(head, 3, 100);
     print(head);
-    del(head, 4);
+    // del(head, 4);
+    RemoveDuplicate(head);
     print(head);
 
     return 0;
