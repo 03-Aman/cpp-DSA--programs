@@ -66,9 +66,9 @@ int main()
     insertAtHead(head, 4);
     insertAtHead(head, 3);
     insertAtHead(head, 6);
-    insertAtHead(head, 5);
+    //insertAtHead(head, 5);
     print(head);
-    int k = 2;
+    int k = 3;
     head = reverseK(head, k);
     print(head);
     return 0;
