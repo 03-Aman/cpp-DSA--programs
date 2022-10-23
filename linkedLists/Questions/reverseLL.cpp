@@ -39,10 +39,11 @@ node *reverse(node *head)
     {
         return head;
     }
-   node *chotaHead = reverse(head->next);
-    head->next->next = head;
+    node *secondEle = head->next;
     head->next = NULL;
-    return chotaHead;
+    node *ReverseRest = reverse(secondEle);
+    secondEle->next = head; 
+    return ReverseRest;
 }
 int main()
 {
