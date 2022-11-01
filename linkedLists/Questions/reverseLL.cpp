@@ -42,8 +42,9 @@ node *reverse(node *head)
     node *secondEle = head->next;
     head->next = NULL;
     node *ReverseRest = reverse(secondEle);
-    secondEle->next = head; 
+    secondEle->next = head;
     return ReverseRest;
+    
 }
 int main()
 {
