@@ -36,7 +36,7 @@ void infix_to_postfix(string t)
         }
         else
         {
-            while (!s.empty()  && precedence(t[i]) <= precedence(s.top()))
+            while (!s.empty() && precedence(t[i]) <= precedence(s.top()))
             {
                 char c = s.top();
                 ans += c;
@@ -57,7 +57,7 @@ void infix_to_postfix(string t)
 }
 int main()
 {
-    string s = "a+b(c*d^e)-g";
+    string s = "a+(b-c)*d"; 
     infix_to_postfix(s);
     return 0;
 }

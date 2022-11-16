@@ -6,7 +6,7 @@ public:
     int rear = -1, front = -1;
     int size, *q;
 };
-void creare_queue(Queue *Q, int size)
+void create_queue(Queue *Q, int size)
 {
     Q->size = size;
     Q->q = new int(Q->size);
@@ -25,8 +25,10 @@ int Dequeue(Queue *Q)
 {
     int x = -1;
     if (Q->front == Q->rear)
-        {cout << "Queue is empty !";
-        Q->rear=Q->front=-1;}
+    {
+        cout << "Queue is empty !";
+        Q->rear = Q->front = -1;
+    }
     else
     {
         Q->front++;
@@ -48,7 +50,8 @@ int main()
     int size;
     cout << "Enter the size of the Queue: ";
     cin >> size;
-    creare_queue(&Q, size);
+    vector<int> res(2);
+    create_queue(&Q, size);
     Enqueue(&Q, 1);
     display(Q);
     Enqueue(&Q, 2);
@@ -65,10 +68,16 @@ int main()
     cout << Dequeue(&Q) << endl;
     cout << Dequeue(&Q) << endl;
     cout << Dequeue(&Q) << endl;
-    //display(Q);
-    Enqueue(&Q, 1);
-    display(Q);
-    Enqueue(&Q, 2);
-    display(Q);
+    // display(Q);
+    //  Enqueue(&Q, 1);
+    //  display(Q);
+    //  Enqueue(&Q, 2);
+    //  display(Q);
+    cout << res.size();
+    res.push_back(1);
+    res.push_back(1);
+    res.push_back(1);
+    cout << res.size();
+    cout << res.capacity();
     return 0;
 }

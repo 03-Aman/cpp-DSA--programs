@@ -61,7 +61,7 @@ node *DeleteFromBST(node *root, int key)
 void inorder(node *root)
 {
     if (root == NULL)
-        return;
+        return; 
     inorder(root->left);
     cout << root->data << " ";
     inorder(root->right);
@@ -79,7 +79,7 @@ int main()
     }
 
     cout << "The level order traversal of the tree is : ";
-    inorder(root);
+    levelOrder(root);
     cout << "Enter the node value you wish to delete from the tree: ";
     int key;
     cin >> key;
