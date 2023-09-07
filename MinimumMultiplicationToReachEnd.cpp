@@ -1,3 +1,4 @@
+// https://practice.geeksforgeeks.org/problems/minimum-multiplications-to-reach-end/1
 class Solution {
   public:
     int minimumMultiplications(vector<int>& arr, int start, int end) {
